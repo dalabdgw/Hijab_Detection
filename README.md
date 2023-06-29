@@ -20,9 +20,8 @@ The 2,000 images will be trained by applying a pseudo labeling technique.<br>
 <pre><code>git clone https://github.com/dalabdgw/Hijab_Detection.git
 
 # install YOLO v5
-git clone https://github.com/ultralytics/yolov5.git
-cd yolov5
-pip install -r requirements.txt
+!git clone https://github.com/ultralytics/yolov5.git
+pip install -r ./yolov5/requirements.txt
 </code></pre>
 
 ### Training
@@ -32,13 +31,13 @@ pip install -r requirements.txt
 * --batch : batch size
 * --cfg : The model size determined above (saved as a yaml file in the yolov5/models folder)
   * s is the lightest model x is the heaviest model Of course, s has the lowest performance but the highest FPS, and x has the highest performance but the lowest FPS.
-<pre><code>python train.py --img 640 --batch 16 --epochs 50 --data ./dataset/hijab.yaml --cfg ./models/yolov5s.yaml --weights yolov5s.pt --name hijab_yolov5s_results</code></pre>
+<pre><code>python ./yolov5/train.py --img 640 --batch 16 --epochs 50 --data ./dataset/hijab.yaml --cfg ./models/yolov5s.yaml --weights yolov5s.pt --name hijab_yolov5s_results</code></pre>
 
 ### Inference
 * If training the model was finished, use the following command for inference.
 * example
-<pre><code>val_img_path = '../dataset/hijab/images/test/chador/84.jpeg'
-!python detect.py --weights ../yolov5/runs/train/hijab_yolov5s_results/weights/best.pt --source "{val_img_path}"</code></pre>
+<pre><code>val_img_path = './hijab/images/test/chador/84.jpeg'
+!python ./yolov5/detect.py --weights ./yolov5/runs/train/hijab_yolov5s_results/weights/best.pt --source "{val_img_path}"</code></pre>
 
 # Result
 ### Training Result
