@@ -1,0 +1,8 @@
+names:
+- burqz
+- chador
+- mask
+- niqab
+nc: 4
+train: ../hijab/images/train/
+val: ../hijab/images/val/
