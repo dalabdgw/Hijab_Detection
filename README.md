@@ -21,7 +21,7 @@ The 2,000 images will be trained by applying a pseudo labeling technique.<br>
 
 # install YOLO v5
 !git clone https://github.com/ultralytics/yolov5.git
-pip install -r ./yolov5/requirements.txt
+!pip install -r ./yolov5/requirements.txt
 </code></pre>
 
 ### Training
