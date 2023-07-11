@@ -2,13 +2,63 @@
 ### Description
 The hijab object detection is an object detection task that detects whether people are wearing hijabs or masks in pictures or videos. This repository includes a demo for building a hijab or face mask detector using YOLO v5 model.
 
+### Description ipynb files
+* Object_Detection_with_YOLO_v5_hijab.ipynb<br>
+  An overview file for model training
+* Data_Processing.ipynb<br>
+  The process about preprocessing dataset
+* Inference_Dataset.ipynb<br>
+  Detecting about datasets
+* Pseudo_Labeling.ipynb<br>
+  Data Labeling using Yolov5
+  
 ### Dataset
 The model was trained on dataset which contains 377 hijab or mask images belonging to 4 classes. The classes are defined as follows:<br>
 * burqz(burqa)
 * chador
 * mask
 * niqab
-
+#### File Structure
+```bash
+hijab
+├── images
+│   ├── test-current
+|   |   ├── burqz
+|   |   ├── chador
+|   |   ├── mask
+|   |   └── niqab 
+│   ├── test-past
+|   |   ├── burqz
+|   |   ├── chador
+|   |   ├── mask
+|   |   └── niqab 
+│   ├── train
+|   |   ├── burqz
+|   |   ├── chador
+|   |   ├── mask
+|   |   └── niqab 
+│   └── val
+|       ├── burqz
+|       ├── chador
+|       ├── mask
+|       └── niqab 
+└── labels
+    ├── test
+    |   ├── burqz
+    |   ├── chador
+    |   ├── mask
+    |   └── niqab 
+    ├── train
+    |   ├── burqz
+    |   ├── chador
+    |   ├── mask
+    |   └── niqab 
+    └── val
+        ├── burqz
+        ├── chador
+        ├── mask
+        └── niqab 
+```
 → This model will be further trained on a dataset that contains about 2,000 hijab or mask images belonging to 4 classes.<br>
 
 ### Data Collection
@@ -39,9 +89,22 @@ The 2,000 images will be trained by applying a pseudo labeling technique.<br>
 <pre><code>val_img_path = './hijab/images/test/chador/84.jpeg'
 !python ./yolov5/detect.py --weights ./yolov5/runs/train/hijab_yolov5s_results/weights/best.pt --source "{val_img_path}"</code></pre>
 
-# Result
+# Result 
 ### Training Result
-TBU
 
-### Test Result
-TBU
+|epochs|50|100|150|365|
+|---|---|---|---|---|
+|precision|0.93831|0.94186|0.9059|0.95066|
+|recall|0.93044|0.87181|0.92202|0.88883|
+|mAP_0.5|0.95287|0.94876|0.93225|0.93946|
+|mAP_0.5:0.95|0.64209|0.64262|0.62445|0.6287|
+|result_img|![image](https://github.com/dalabdgw/Hijab_Detection/assets/135303032/9f2fbb5d-c9c6-488d-b960-be73a99aba1d)|![스크린샷 2023-07-11 182602](https://github.com/dalabdgw/Hijab_Detection/assets/135303032/293d32ae-800f-4e9c-886e-adee47b690b1)|![image](https://github.com/dalabdgw/Hijab_Detection/assets/135303032/0bdd2e2d-fef5-4c1f-9b33-c8c9a53a5f7a)|![image](https://github.com/dalabdgw/Hijab_Detection/assets/135303032/ce9cd7d8-2f42-432a-bc35-a85a1a956c66)|
+
+
+
+### Test Result (Tested on models with epochs 50)
+
+|mask|niqab|chador|burqz|
+|---|---|---|---|
+|![image](https://github.com/dalabdgw/Hijab_Detection/assets/135303032/680d65fc-cf07-4c79-8890-ba6afe5fc3d2)|![image](https://github.com/dalabdgw/Hijab_Detection/assets/135303032/dea1d290-1619-4d12-85cc-c777aaed6598)|![image](https://github.com/dalabdgw/Hijab_Detection/assets/135303032/903bd4c0-405c-42e8-a448-a46aa6f8cc4d)|![image](https://github.com/dalabdgw/Hijab_Detection/assets/135303032/99e0b0d5-747b-4926-a85e-d4e5771bfb4a)|
+
