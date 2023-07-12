@@ -73,12 +73,10 @@ hijab
 ### Data Collection
 We collected data in a variety of ways.<br>
 1. We collected about 800 image data by crawling Google and Bing sites.<br>
-2. We collected about 200 image data by using chrome extension program(Image Downloader, you can find easily to search chrome market "Image Downloader") <br>
-
-### Data Preprocessing
 #### Data Deduplication 
-We maked python code for deduplicating images. you can find python code in "Inference_Dataset.ipynb" file
+We maked python code for deduplicating images. you can find python code in "Inference_Dataset.ipynb" file<br>
 
+2. We collected about 200 image data by using chrome extension program(Image Downloader, you can find easily to search chrome market "Image Downloader") <br>
 #### Data Labeling
 We used DarkLabel(Data Labeling Program operating in a Windows environment)
 * You can download DarkLabel in Github (https://github.com/darkpgmr/DarkLabel)<br>
