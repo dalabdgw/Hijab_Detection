@@ -4,13 +4,24 @@ The hijab object detection is an object detection task that detects whether peop
 
 ### Description ipynb files
 * Object_Detection_with_YOLO_v5_hijab.ipynb<br>
-  An overview file for model training
+  An overview file for model training<br>
+  Through this file, You can see the process by which we have learned the model, verified it, and performed predictions.<br>
+  (You don't need to modify the code to perform it.)
 * Data_Processing.ipynb<br>
-  The process about preprocessing dataset
+  The process about preprocessing dataset<br>
+  Through this file, you can remove duplicate image data.(the file path needs to be modified)<br>
 * Inference_Dataset.ipynb<br>
-  Detecting about datasets
+  Detecting about datasets<br>
+  Through this file, you can see the difference between the results of a model with a small number of data and the results of a model with a large number of data.<br>
 * Pseudo_Labeling.ipynb<br>
-  Data Labeling using Yolov5
+  Data Labeling using Yolov5<br>
+  Through this file, You can learn how to label new data through existing models.<br>
+  
+
+→ This model will be further trained on a dataset that contains about 2,000 hijab or mask images belonging to 4 classes.<br>
+
+
+# Data
   
 ### Dataset
 The model was trained on dataset which contains 377 hijab or mask images belonging to 4 classes. The classes are defined as follows:<br>
@@ -18,6 +29,7 @@ The model was trained on dataset which contains 377 hijab or mask images belongi
 * chador
 * mask
 * niqab
+  
 #### File Structure
 ```bash
 hijab
@@ -59,11 +71,19 @@ hijab
         ├── mask
         └── niqab 
 ```
-→ This model will be further trained on a dataset that contains about 2,000 hijab or mask images belonging to 4 classes.<br>
-
 ### Data Collection
-The data collection for this project was initially done through Google search, and then we labeled the collected images.<br>
-The 2,000 images will be trained by applying a pseudo labeling technique.<br>
+We collected data in a variety of ways.<br>
+1. We collected about 800 image data by crawling Google and Bing sites.<br>
+2. We collected about 200 image data by using chrome extension program(Image Downloader, you can find easily to search chrome market "Image Downloader") <br>
+
+### Data Preprocessing
+#### Data Deduplication 
+We maked python code for deduplicating images. you can find python code in "Inference_Dataset.ipynb" file
+
+#### Data Labeling
+We used DarkLabel(Data Labeling Program operating in a Windows environment)
+* You can download DarkLabel in Github (https://github.com/darkpgmr/DarkLabel)<br>
+* We Labeled data following this file. => [DarkLabel.pdf](https://github.com/dalabdgw/Hijab_Detection/files/12026408/DarkLabel.pdf) <br>
 
 ### Setup
 * Clone this repository and install YOLO v5
