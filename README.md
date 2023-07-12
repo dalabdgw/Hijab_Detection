@@ -3,20 +3,19 @@
 The hijab object detection is an object detection task that detects whether people are wearing hijabs or masks in pictures or videos. This repository includes a demo for building a hijab or face mask detector using YOLO v5 model.
 
 ### Description ipynb files
+* Pseudo_Labeling.ipynb<br>
+  Data Labeling using Yolov5<br>
+  Through this file, You can learn how to label new data through existing models.<br>
+* Data_Processing.ipynb<br>
+  The process about preprocessing dataset<br>
+  Through this file, you can remove duplicate image data.(the file path needs to be modified)<br>
 * Object_Detection_with_YOLO_v5_hijab.ipynb<br>
   An overview file for model training<br>
   Through this file, You can see the process by which we have learned the model, verified it, and performed predictions.<br>
   (You don't need to modify the code to perform it.)
-* Data_Processing.ipynb<br>
-  The process about preprocessing dataset<br>
-  Through this file, you can remove duplicate image data.(the file path needs to be modified)<br>
 * Inference_Dataset.ipynb<br>
-  Detecting about datasets<br>
-  Through this file, you can see the difference between the results of a model with a small number of data and the results of a model with a large number of data.<br>
-* Pseudo_Labeling.ipynb<br>
-  Data Labeling using Yolov5<br>
-  Through this file, You can learn how to label new data through existing models.<br>
-  
+  Detecting hijab related object using collected dataset<br>
+  Through this file, you can see the difference between the results of a model with a small number of data and the results of a model with a large number of data.<br>  
 
 → This model will be further trained on a dataset that contains about 2,000 hijab or mask images belonging to 4 classes.<br>
 
